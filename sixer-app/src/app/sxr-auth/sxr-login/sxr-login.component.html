@@ -1,0 +1,13 @@
+<div class="bg">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+        <label>Enter your login Id: </label>
+        <input formControlName="id" placeholder="Eg., rajalakshmib">  
+        <button type="submit">Login</button>
+
+        <p> Your choosen name id :  {{loginForm.get('id').value}} </p>
+
+        <div *ngIf="loginForm.controls.id.hasError('pattern')">
+                Please enter only alphabets!
+              </div>
+      </form>
+</div>
